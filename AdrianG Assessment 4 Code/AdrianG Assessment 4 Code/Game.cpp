@@ -8,10 +8,8 @@
 using namespace std;
 
 Game::Game() {
-	cout << "Hello c";
 }
 Game::Game(string name) {
-	cout << "Hello";
 	gameName = name;
 }
 Game::~Game() {
@@ -25,13 +23,14 @@ void Game::GameStart() {
 	Advent_1->Read();
 
 	if (Advent_1->operator==("start") == true) {
-		cout << "Game Has Started";
+		cout << "Game Has Started\n" << "\n\n";
 		isStart = true;
 	}
-	else { cout << "Player Has Quit"; }
+	else { cout << "Player Has Quit\n"; }
 }
 
 Room* NewRoom = new Room();
 void Game::Run() {  
 	if (isStart == true) { NewRoom->Makemap(); }
+	NewRoom->Makemap_W_Item();
 }
