@@ -1,13 +1,17 @@
 #include "Game.h"
 #include "String_Utility.h"
+#include "Room.h"
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 Game::Game() {
+	cout << "Hello c";
 }
 Game::Game(string name) {
+	cout << "Hello";
 	gameName = name;
 }
 Game::~Game() {
@@ -24,4 +28,10 @@ void Game::GameStart() {
 		cout << "Game Has Started";
 		isStart = true;
 	}
+	else { cout << "Player Has Quit"; }
+}
+
+Room* NewRoom = new Room();
+void Game::Run() {  
+	if (isStart == true) { NewRoom->Makemap(); }
 }

@@ -285,14 +285,14 @@ bool String::operator ==(const char* other)
 {
 	string h_older = holder_1;
 	if (h_older.size() != strlen(other)) {
-		cout << "False";
+		//cout << "False";
 		return false;
 	}
 	if (h_older.size() == strlen(other)) {
 
 		for (int i = 0; i < h_older.size(); i++) {
 			if (h_older[i] != other[i]) {
-				cout << "False";
+				//cout << "False";
 				return false;
 			}
 			else if (h_older[i] == other[i]) {
@@ -302,7 +302,7 @@ bool String::operator ==(const char* other)
 		
 		}
 	}
-	cout << "False";
+	//cout << "False";
 	cout << "\n\n\n\n";
 	return false;
 }
