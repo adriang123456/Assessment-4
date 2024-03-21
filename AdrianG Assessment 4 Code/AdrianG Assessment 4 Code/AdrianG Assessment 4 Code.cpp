@@ -15,6 +15,12 @@ int main()
 	New_Game->GameStart();
 	New_Game->Run();
 
+	while (New_Game->isStart != 0) {
+		New_Game->Move();
+		New_Game->Next_Turn();
+	}
+
+
 	delete New_Game;
 	New_Game = nullptr;
 }

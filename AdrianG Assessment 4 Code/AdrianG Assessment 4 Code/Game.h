@@ -11,12 +11,15 @@ public:
 	Game(string name);
 	~Game();
 
+	// functions
 public:
 	void GameStart();
-	void Run();
 	void Makemap_W_Item();
-	void NextTurn();
+	void Move();
+	void Run();
+	void Next_Turn();
 
+	// variables
 public:
 	int random_x;
 	int random_y;
@@ -31,11 +34,17 @@ public:
 						 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
 						 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
 						 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"} };
-
-private:
+	string item_initial;
 
 	bool isStart;
 
+	// private variables
+private:
+
+	int t_counter = 0;
+	int g_input;
+
 	string gameName;
+	
 };
 

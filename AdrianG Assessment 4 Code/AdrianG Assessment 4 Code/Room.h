@@ -1,5 +1,8 @@
 #pragma once
 #include "Game.h"
+
+#include <string>
+
 class Room : public Game
 {
 public:
@@ -8,7 +11,8 @@ public:
 
 public:
 	void Makemap();
-	int RanNum();
+	
+	void Room_Description(string desc);
 
 public:
 	

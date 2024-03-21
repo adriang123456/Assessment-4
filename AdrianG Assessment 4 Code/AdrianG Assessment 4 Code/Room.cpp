@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// constructor and destructor
 Room::Room() {
 }
 Room::~Room() {
