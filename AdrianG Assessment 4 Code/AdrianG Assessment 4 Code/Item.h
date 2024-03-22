@@ -15,7 +15,7 @@ public:
 	// functions
 public:
 
-	virtual void Description(string desc) const;
+	virtual void Description(string desc);
 	virtual void Use(string status);
 
 	//variables

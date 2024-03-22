@@ -21,7 +21,7 @@ void Cat::CatDesc(string c_des) {
 }
 
 // the function to use the cat item
-void Cat::Catuse(string status) {
-	Item::Use(status);
+void Cat::Catuse(string info) {
+	Item::Use(info);
 }
 

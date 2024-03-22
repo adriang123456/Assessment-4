@@ -16,8 +16,10 @@ public:
 
 	// functions
 public:
+	virtual void Description(string desc);
+
 	void BodDesc(string b_des);
-	void BODuse(string status);
+	void BODuse(string info);
 
 	// variables
 public:

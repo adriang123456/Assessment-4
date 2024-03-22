@@ -12,11 +12,11 @@ Item::~Item() {
 }
 
 // to print a description
-void Item::Description(string desc) const {
-	cout << desc;
+void Item::Description(string desc){
+	cout << desc << "This is an item description";
 }
 
 // to use an item
 void Item::Use(string status) {
-	cout << "Player Has used. It is " << status;
+	cout << "Player has used an item" << status;
 }

@@ -17,7 +17,7 @@ public:
 	// functions
 public:
 	void CatDesc(string c_desc);
-	void Catuse(string status);
+	void Catuse(string info);
 
 	// variables
 public:

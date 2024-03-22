@@ -18,6 +18,9 @@ Room::~Room() {
 
 	//delete cat;
 	//cat = nullptr;
+
+	//delete box;
+	//box = nullptr;
 }
 
 // creating classes
@@ -61,7 +64,10 @@ void Room::Item_Description(string i_i) {
 	}
 	if (i_i == "B") {
 		string ran_n = to_string(random_n);
-		box->BodDesc("This box of donuts has " + ran_n);
+		if (random_n == 0) {
+			box->Description("This box of donuts is empty");
+		}
+		else { box->Description("This box of donuts has " + ran_n); }
 	}
 	if (i_i == "C") {
 		cat->Catuse("Hi");
