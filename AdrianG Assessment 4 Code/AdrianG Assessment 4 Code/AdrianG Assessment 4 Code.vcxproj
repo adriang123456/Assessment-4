@@ -128,16 +128,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AdrianG Assessment 4 Code.cpp" />
+    <ClCompile Include="Box_of_Donuts.cpp" />
+    <ClCompile Include="Cat.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Lamp.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Spell.cpp" />
     <ClCompile Include="String_Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Box_of_Donuts.h" />
+    <ClInclude Include="Cat.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Lamp.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Spell.h" />

@@ -59,21 +59,25 @@ void Game::Makemap_W_Item() {
 			int ran_item = rand() % 3;
 			switch (ran_item)
 			{
-			case 1:
+			case 0:
 				item_initial = "L";
 				break;
 
-			case 2:
+			case 1:
 				item_initial = "B";
 
 				break;
 
-			case 3:
+			case 2:
 				item_initial = "C";
+				break;
+
+			default:
 				break;
 			}
 
 			rooms[random_y][random_x] = item_initial;
+			rooms_w_i[random_y][random_x] = item_initial;
 		}
 	}
 
@@ -98,10 +102,12 @@ void Game::Run() {
 // the function which lets the player move around the map
 void Game::Move() {
 	cout << "\n\n\n" << "Where would you like to move?" << "\n";
-	cout << "\n" << "1: West  2: North  3: East  4: South  5:Pickup Item  6: Use Item  7:Use Spell  0: Quit" << endl;
+	cout << "\n" << "1: West  2: North  3: East  4: South 0: Quit" << endl;
 	
+	//   5:Use Item  6:Use Spells
 	cin >> g_input;
 	Player_1->P_Action(g_input);
+	cout << endl;
 	
 	// checking if the player is allowed to move to the requested room
 	if (Player_1->p_x == -1) { 
@@ -122,20 +128,42 @@ void Game::Move() {
 		Player_1->P_Action(g_input);
 	}
 
-	if (Player_1->p_action == 0) { isStart = false; }
-	//cout << "\n\n\n" << Player_1->p_x << "\n\n\n";
+	if (Player_1->p_action == 0) { isStart = false;}
+}
+
+// to get an item description from current room
+void Game::Item_info() {
+	Room_Info->Item_Description(rooms_w_i[Player_1->p_x][Player_1->p_y]);
 }
 
 void Game::Next_Turn() {
-
-	if (rooms[Player_1->p_x][Player_1->p_y] == "I") {
-		
+	// check to see what is in the room and printing a description of what is in it if anything
+	if (rooms_w_i[Player_1->p_x][Player_1->p_y] == "O") {
+		Room_Info->Room_Description("This room is empty ", rooms[Player_1->p_x][Player_1->p_y]);
+	}
+	else if (rooms_w_i[Player_1->p_x][Player_1->p_y] == "L") {
+		Room_Info->Room_Description("This room has a ", rooms[Player_1->p_x][Player_1->p_y]);
+		Room_Info->Item_Description(rooms_w_i[Player_1->p_x][Player_1->p_y]);
+	}
+	else if (rooms_w_i[Player_1->p_x][Player_1->p_y] == "B") {
+		Room_Info->Room_Description("This room has a ", rooms[Player_1->p_x][Player_1->p_y]);
+		Room_Info->Item_Description(rooms_w_i[Player_1->p_x][Player_1->p_y]);
+	}
+	else if (rooms_w_i[Player_1->p_x][Player_1->p_y] == "C") {
+		Room_Info->Room_Description("This room has a ", rooms[Player_1->p_x][Player_1->p_y]);
+	}
+	else if (rooms_w_i[Player_1->p_x][Player_1->p_y] == "x") {
+		Room_Info->Room_Description("This room has been visited", rooms[Player_1->p_x][Player_1->p_y]);
+	}
+	else if (rooms_w_i[Player_1->p_x][Player_1->p_y] == "X") {
+		Room_Info->Room_Description("This room is your starting room", rooms[Player_1->p_x][Player_1->p_y]);
 	}
 
-
+	// to show where the player has been
 	rooms[Player_1->p_x][Player_1->p_y] = "x";
 
-	cout << endl << "Turn --- " << t_counter << endl;
+	// to print updated map
+	cout << "\n\n" << "Turn --- " << t_counter << endl;
 	for (int i = 0; i < 10; i++) {
 		for (int o = 0; o < 10; o++) {
 			cout << rooms[i][o] << " ";
@@ -143,4 +171,16 @@ void Game::Next_Turn() {
 		cout << "\n";
 	}
 	t_counter += 1;
+
+	cout << "\n\n" << "What would you like to do in this room?" << "\n" << "5:Use Item  6:Use Spells  7:Do Nothing" << endl;
+	cin >> g_input;
+	Player_1->P_Action(g_input);
+	
+	if (Player_1->p_action != 7) {
+
+		if (Player_1->p_action == 5) {
+			cout << endl;
+			Room_Info->Item_Use(rooms_w_i[Player_1->p_x][Player_1->p_y]);
+		}
+	}
 }

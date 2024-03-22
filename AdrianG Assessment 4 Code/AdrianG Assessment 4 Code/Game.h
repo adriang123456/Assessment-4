@@ -6,6 +6,7 @@ using namespace std;
 
 class Game
 {
+	// constructors and destructors
 public:
 	Game();
 	Game(string name);
@@ -14,9 +15,12 @@ public:
 	// functions
 public:
 	void GameStart();
-	void Makemap_W_Item();
-	void Move();
 	void Run();
+
+	void Makemap_W_Item();
+	
+	void Move();
+	void Item_info();
 	void Next_Turn();
 
 	// variables
@@ -34,6 +38,16 @@ public:
 						 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
 						 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
 						 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"} };
+	string rooms_w_i[10][10] = { { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
+					 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
+					 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
+					 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
+					 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
+					 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
+					 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
+					 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
+					 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"},
+					 { "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"} };
 	string item_initial;
 
 	bool isStart;

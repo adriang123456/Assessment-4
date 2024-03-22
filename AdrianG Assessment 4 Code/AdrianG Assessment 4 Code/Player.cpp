@@ -1,10 +1,12 @@
 #include <iostream>
+#include <vector>
 
 #include "Player.h"
 #include "Item.h"
 
 using namespace std;
 
+// constructors and destructors
 Player::Player() {
 }
 Player::Player(int x, int y, string pname) {
@@ -16,6 +18,7 @@ Player::Player(int x, int y, string pname) {
 Player::~Player() {
 }
 
+// how to tell what to do when you select an option
 int Player::P_Action(int p_a)
 {
 	switch (p_a)
@@ -37,19 +40,28 @@ int Player::P_Action(int p_a)
 		break;
 
 	case 5:
-		
+		p_action = 5;
 		break;
 
 	case 6:
-
+		p_action = 6;
 		break;
 
 	case 7:
+		p_action = 7;
 		break;
 
 	case 0:
-		return 0;
+		cout << "Hello";
+		p_action = 0;
+		break;
+		
+	default:
 		break;
 	}
 	return p_action;
+}
+
+void Player::Add_To_Inven() {  // prob remove
+
 }
