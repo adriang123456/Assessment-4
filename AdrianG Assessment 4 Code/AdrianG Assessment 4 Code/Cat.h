@@ -16,8 +16,9 @@ public:
 
 	// functions
 public:
-	void CatDesc(string c_desc);
-	void Catuse(string info);
+	virtual void Description(string desc);
+	virtual void Use(bool status, int count);
+
 
 	// variables
 public:

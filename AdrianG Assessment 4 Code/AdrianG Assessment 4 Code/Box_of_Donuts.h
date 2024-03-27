@@ -17,9 +17,7 @@ public:
 	// functions
 public:
 	virtual void Description(string desc);
-
-	void BodDesc(string b_des);
-	void BODuse(string info);
+	virtual void Use(bool status, int count);
 
 	// variables
 public:

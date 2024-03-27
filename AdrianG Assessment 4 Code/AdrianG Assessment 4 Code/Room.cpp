@@ -27,6 +27,7 @@ Room::~Room() {
 Item* It_ems = new Item();
 Cat* cat = new Cat();
 Box_of_Donuts* box = new Box_of_Donuts();
+Lamp* lamp = new Lamp();
 
 //void Room::Makemap()
 //{
@@ -43,7 +44,7 @@ Box_of_Donuts* box = new Box_of_Donuts();
 // making a room description
 void Room::Room_Description(string desc, string i_i) {
 	if (i_i == "O") {cout << desc;}
-	else if (i_i == "L") {cout << desc << "Light. ";}
+	else if (i_i == "L") {cout << desc << "Lamp. ";}
 	else if (i_i == "B") {cout << desc << "Box of Donuts. ";}
 	else if (i_i == "C") {cout << desc << "Cat. ";}
 	else if (i_i == "x") {cout << desc;}
@@ -60,29 +61,47 @@ void Room::Item_Description(string i_i) {
 
 
 	if (i_i == "L") {
-		cat->CatDesc("The Lamp is off");
+		if (random_s == 0) {
+			lamp->Description("The Lamp is off");
+			l_state = false;
+		}
+		else if (random_s == 1) {
+			lamp->Description("The Lamp is on");
+			l_state = true;
+		}
 	}
 	if (i_i == "B") {
 		string ran_n = to_string(random_n);
 		if (random_n == 0) {
 			box->Description("This box of donuts is empty");
+			b_state = 0;
 		}
-		else { box->Description("This box of donuts has " + ran_n); }
+		else { 
+			box->Description("This box of donuts has " + ran_n); 
+			b_state = random_n;
+		}
 	}
 	if (i_i == "C") {
-		cat->Catuse("Hi");
+		if (random_s == 0) {
+			cat->Description("The cat is not purring");
+			c_state = false;
+		}
+		else if (random_s == 1) {
+			cat->Description("The cat is purring");
+			c_state = true;
+		}
 	}
 }
 
 void Room::Item_Use(string i_i) {
 	if (i_i == "L") {
-		cat->Catuse("Hi");
+		lamp->Use(l_state, 0);
 	}
 	if (i_i == "B") {
-		box->BODuse("boo");
+		box->Use(filler, b_state);
 	}
 	if (i_i == "C") {
-		cat->Catuse("Hi");
+		cat->Use(c_state, 0);
 	}
 }
 

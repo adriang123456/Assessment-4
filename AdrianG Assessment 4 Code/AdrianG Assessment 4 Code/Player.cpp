@@ -3,6 +3,7 @@
 
 #include "Player.h"
 #include "Item.h"
+#include "Spell.h"
 
 using namespace std;
 
@@ -17,6 +18,8 @@ Player::Player(int x, int y, string pname) {
 }
 Player::~Player() {
 }
+
+Spell* Player_Spells = new Spell("Fireball", 50, "Frostbite", 10, "Healing", 25, "Teleport", 0, "MagicMissile", 100);
 
 // how to tell what to do when you select an option
 int Player::P_Action(int p_a)
@@ -52,7 +55,6 @@ int Player::P_Action(int p_a)
 		break;
 
 	case 0:
-		cout << "Hello";
 		p_action = 0;
 		break;
 		
@@ -60,8 +62,4 @@ int Player::P_Action(int p_a)
 		break;
 	}
 	return p_action;
-}
-
-void Player::Add_To_Inven() {  // prob remove
-
 }

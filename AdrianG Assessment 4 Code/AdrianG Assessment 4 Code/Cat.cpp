@@ -16,12 +16,18 @@ Cat::Cat(string c_name, int c_id) {
 Cat::~Cat() {
 }
 
-void Cat::CatDesc(string c_des) {
-	Item::Description(c_des);
+// the function to overide the Item description function
+void Cat::Description(string desc) {
+	cout << desc;
 }
 
-// the function to use the cat item
-void Cat::Catuse(string info) {
-	Item::Use(info);
+// the function to overide the Item use function
+void Cat::Use(bool status, int count) {
+	if (status == 0) {
+		cout << "Player has played with the cat. The cat is now purring :)";
+	}
+	else if (status == 1) { cout << "The player has scared the cat. It is no longer purring :("; }
 }
+
+
 

@@ -27,7 +27,9 @@ public:
 	
 	bool l_state;
 	bool c_state;
+	int b_state;
 
+	bool filler;
 
 };
 

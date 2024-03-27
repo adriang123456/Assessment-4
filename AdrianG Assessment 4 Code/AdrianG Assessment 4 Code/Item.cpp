@@ -17,6 +17,6 @@ void Item::Description(string desc){
 }
 
 // to use an item
-void Item::Use(string status) {
+void Item::Use(bool status, int count) {
 	cout << "Player has used an item" << status;
 }

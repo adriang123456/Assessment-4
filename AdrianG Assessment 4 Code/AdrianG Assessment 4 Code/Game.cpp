@@ -24,7 +24,8 @@ Game::~Game() {
 	//Player_1 = nullptr;
 }
 
-String* Advent_1 = new String("start");
+String* Game_String = new String("start");
+String* Game_String_1 = new String();
 
 Room* Room_Info = new Room();
 Player* Player_1 = new Player( 9, 0, "John" );
@@ -33,13 +34,13 @@ Player* Player_1 = new Player( 9, 0, "John" );
 void Game::GameStart() {
 	cout << "Welcome To This Text Based Adventure Game" << endl << "Would you like to start or quit?\n";
 
-	Advent_1->Read();
+	Game_String->Read();
 
-	if (Advent_1->operator==("start") == true) {
+	if (Game_String->operator==("start") == true) {
 		cout << "Game Has Started\n" << "\n\n";
 		isStart = true;
 	}
-	else if (Advent_1->operator==("start") != true) { cout << "Player Has Quit\n"; isStart = false; }
+	else if (Game_String->operator==("start") != true) { cout << "Player Has Quit\n"; isStart = false; }
 }
 
 // Makes the map with random item locations
@@ -151,6 +152,7 @@ void Game::Next_Turn() {
 	}
 	else if (rooms_w_i[Player_1->p_x][Player_1->p_y] == "C") {
 		Room_Info->Room_Description("This room has a ", rooms[Player_1->p_x][Player_1->p_y]);
+		Room_Info->Item_Description(rooms_w_i[Player_1->p_x][Player_1->p_y]);
 	}
 	else if (rooms_w_i[Player_1->p_x][Player_1->p_y] == "x") {
 		Room_Info->Room_Description("This room has been visited", rooms[Player_1->p_x][Player_1->p_y]);
@@ -172,6 +174,7 @@ void Game::Next_Turn() {
 	}
 	t_counter += 1;
 
+	// asks what you would like to do in the room you've moved to
 	cout << "\n\n" << "What would you like to do in this room?" << "\n" << "5:Use Item  6:Use Spells  7:Do Nothing" << endl;
 	cin >> g_input;
 	Player_1->P_Action(g_input);
@@ -182,5 +185,7 @@ void Game::Next_Turn() {
 			cout << endl;
 			Room_Info->Item_Use(rooms_w_i[Player_1->p_x][Player_1->p_y]);
 		}
+
+		else if (Player_1->p_action == 6)
 	}
 }

@@ -16,8 +16,8 @@ public:
 
 	// functions
 public:
-	void LampDesc(string l_des);
-	void Lampuse(string info);
+	virtual void Description(string desc);
+	virtual void Use(bool status, int count);
 
 	// variables
 public:

@@ -16,7 +16,7 @@ public:
 public:
 
 	virtual void Description(string desc);
-	virtual void Use(string status);
+	virtual void Use(bool status, int count);
 
 	//variables
 public:
