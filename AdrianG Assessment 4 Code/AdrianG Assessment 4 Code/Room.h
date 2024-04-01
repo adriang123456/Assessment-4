@@ -1,7 +1,10 @@
 #pragma once
 #include "Game.h"
 
+#include <iostream>
 #include <string>
+
+using namespace std;
 
 class Room
 {
@@ -10,6 +13,10 @@ public:
 	Room();
 	~Room();
 
+	//Item* It_ems;
+	//Cat* cat;
+	//Box_of_Donuts* box;
+	//Lamp* lamp;
 	// functions
 public:
 	//void Makemap();

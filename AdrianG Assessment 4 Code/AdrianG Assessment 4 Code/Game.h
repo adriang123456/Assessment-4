@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include "String_Utility.h"
+#include "Room.h"
+#include "Player.h"
 
 using namespace std;
 
@@ -11,6 +13,12 @@ public:
 	Game();
 	Game(string name);
 	~Game();
+
+	String* Game_String;
+	String* Game_String_1;
+
+	Room* Room_Info;
+	Player* Player_1;
 
 	// functions
 public:
@@ -57,6 +65,9 @@ private:
 
 	int t_counter = 0;
 	int g_input;
+
+	string gs_input;
+	string gs_input_1;
 
 	string gameName;
 	

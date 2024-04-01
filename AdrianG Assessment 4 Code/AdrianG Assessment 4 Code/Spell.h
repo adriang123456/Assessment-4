@@ -13,8 +13,8 @@ public:
 
 	// functions
 public:
-	void Cast(string spell_name);
-	bool Compare();
+	void Cast(string spell_name, int spell_dmg);
+	bool Compare(string spell_a, string spell_b);
 
 	// variables
 public:

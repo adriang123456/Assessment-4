@@ -1,13 +1,11 @@
 #pragma once
-#include "Game.h"
-
 #include <iostream>
 #include <vector>
 #include <string>
 
 using namespace std;
 
-class Player : public Game
+class Player
 {
 	// constructos and destructors
 public:
@@ -18,7 +16,10 @@ public:
 	// functions 
 public:
 	int P_Action(int p_a);
-	void Add_To_Inven();
+	void Add_To_SPBook();
+	void Find_Spell(int l, int r, int x);
+	void Compare_Spells(string spell_1, string spell_2);
+	void Cast_Spell(string s_n, int s_d);
 
 	// variables
 public:
@@ -30,9 +31,12 @@ public:
 	int np_x;
 	int np_y;
 
+	int m;
+
 	string player_name;
 
-	vector<string> inventory;
+	vector<string> spells;
+	vector<int> spells_dmg;
 
 	bool is_item;
 	bool has_item;

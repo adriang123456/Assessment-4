@@ -11,6 +11,10 @@ using namespace std;
 
 // constructor and destructor
 Room::Room() {
+	//Item* It_ems = new Item();
+	//Cat* cat = new Cat();
+	//Box_of_Donuts* box = new Box_of_Donuts();
+	//Lamp* lamp = new Lamp();
 }
 Room::~Room() {
 	//delete It_ems;
@@ -21,9 +25,11 @@ Room::~Room() {
 
 	//delete box;
 	//box = nullptr;
+
+	//delete lamp;
+	//lamp = nullptr;
 }
 
-// creating classes
 Item* It_ems = new Item();
 Cat* cat = new Cat();
 Box_of_Donuts* box = new Box_of_Donuts();
