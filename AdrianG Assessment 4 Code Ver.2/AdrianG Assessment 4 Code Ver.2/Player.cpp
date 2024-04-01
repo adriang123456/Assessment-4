@@ -4,7 +4,7 @@
 #include "Player.h"
 #include "Item.h"
 #include "Spell.h"
-#include "String_Utility.h"
+#include "String.h"
 
 using namespace std;
 
@@ -58,7 +58,7 @@ int Player::P_Action(int p_a)
 	case 0:
 		p_action = 0;
 		break;
-		
+
 	default:
 		break;
 	}
@@ -66,7 +66,7 @@ int Player::P_Action(int p_a)
 }
 
 // Adding the spells to the players spellbook
-void Player::Add_To_SPBook(){
+void Player::Add_To_SPBook() {
 	spells.push_back(Player_Spells->spell_n_1);
 	spells.push_back(Player_Spells->spell_n_2);
 	spells.push_back(Player_Spells->spell_n_3);
@@ -78,7 +78,7 @@ void Player::Add_To_SPBook(){
 	spells_dmg.push_back(Player_Spells->spell_d_3);
 	spells_dmg.push_back(Player_Spells->spell_d_4);
 	spells_dmg.push_back(Player_Spells->spell_d_5);
-	
+
 }
 
 void Player::Find_Spell(int s_pos, int size, int target) {

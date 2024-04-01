@@ -12,7 +12,7 @@ Item::~Item() {
 }
 
 // to print a description
-void Item::Description(string desc){
+void Item::Description(string desc) {
 	cout << desc << "This is an item description";
 }
 

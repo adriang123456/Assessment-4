@@ -49,18 +49,18 @@ Lamp* lamp = new Lamp();
 
 // making a room description
 void Room::Room_Description(string desc, string i_i) {
-	if (i_i == "O") {cout << desc;}
-	else if (i_i == "L") {cout << desc << "Lamp. ";}
-	else if (i_i == "B") {cout << desc << "Box of Donuts. ";}
-	else if (i_i == "C") {cout << desc << "Cat. ";}
-	else if (i_i == "x") {cout << desc;}
-	else if (i_i == "X") {cout << desc;}
+	if (i_i == "O") { cout << desc; }
+	else if (i_i == "L") { cout << desc << "Lamp. "; }
+	else if (i_i == "B") { cout << desc << "Box of Donuts. "; }
+	else if (i_i == "C") { cout << desc << "Cat. "; }
+	else if (i_i == "x") { cout << desc; }
+	else if (i_i == "X") { cout << desc; }
 }
 
 // making a item description
 void Room::Item_Description(string i_i) {
 	srand((unsigned)time(NULL));
-	
+
 	random_s = rand() % 2;
 	random_n = rand() % 10;
 
@@ -82,8 +82,8 @@ void Room::Item_Description(string i_i) {
 			box->Description("This box of donuts is empty");
 			b_state = 0;
 		}
-		else { 
-			box->Description("This box of donuts has " + ran_n); 
+		else {
+			box->Description("This box of donuts has " + ran_n);
 			b_state = random_n;
 		}
 	}
@@ -110,4 +110,3 @@ void Room::Item_Use(string i_i) {
 		cat->Use(c_state, 0);
 	}
 }
-

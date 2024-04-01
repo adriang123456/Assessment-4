@@ -29,5 +29,3 @@ void Cat::Use(bool status, int count) {
 	else if (status == 1) { cout << "The player has scared the cat. It is no longer purring :("; }
 }
 
-
-

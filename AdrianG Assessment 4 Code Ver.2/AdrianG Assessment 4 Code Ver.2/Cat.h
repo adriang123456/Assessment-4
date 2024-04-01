@@ -4,26 +4,27 @@
 #include <iostream>
 #include <string>
 
-	using namespace std;
+using namespace std;
 
-class Lamp : public Item
+class Cat : public Item
 {
 	// constructor and destructor
 public:
-	Lamp();
-	Lamp(string l_name, int l_id);
-	~Lamp();
+	Cat();
+	Cat(string c_name, int c_id);
+	~Cat();
 
 	// functions
 public:
 	virtual void Description(string desc);
 	virtual void Use(bool status, int count);
 
+
 	// variables
 public:
-	string lamp_name;
+	string cat_name;
 
-	int lamp_ID;
+	int cat_ID;
 
-	bool on_o_off;
+	bool purring;
 };

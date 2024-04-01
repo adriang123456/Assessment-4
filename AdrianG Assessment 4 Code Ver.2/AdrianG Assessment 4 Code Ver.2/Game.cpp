@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "String_Utility.h"
+#include "String.h"
 #include "Player.h"
 
 #include <iostream>
@@ -103,7 +103,7 @@ void Game::Makemap_W_Item() {
 }
 
 // if the player has selected to start the game, will spawn the map
-void Game::Run() {  
+void Game::Run() {
 	if (isStart == true) { Makemap_W_Item(); Player_1->Add_To_SPBook(); }
 }
 
@@ -111,32 +111,32 @@ void Game::Run() {
 void Game::Move() {
 	cout << "\n\n\n" << "Where would you like to move?" << "\n";
 	cout << "\n" << "1: West  2: North  3: East  4: South 0: Quit" << endl;
-	
+
 	//   5:Use Item  6:Use Spells
 	cin >> g_input;
 	Player_1->P_Action(g_input);
 	cout << endl;
-	
+
 	// checking if the player is allowed to move to the requested room
-	if (Player_1->p_x == -1) { 
+	if (Player_1->p_x == -1) {
 		Player_1->p_x = 0;
 		Player_1->P_Action(g_input);
 	}
-	if (Player_1->p_y == -1) { 
+	if (Player_1->p_y == -1) {
 		Player_1->p_y = 0;
 		Player_1->P_Action(g_input);
 	}
 
-	if (Player_1->p_x == 10) { 
+	if (Player_1->p_x == 10) {
 		Player_1->p_x = 9;
 		Player_1->P_Action(g_input);
 	}
-	if (Player_1->p_y == 10) { 
+	if (Player_1->p_y == 10) {
 		Player_1->p_y = 9;
 		Player_1->P_Action(g_input);
 	}
 
-	if (Player_1->p_action == 0) { isStart = false;}
+	if (Player_1->p_action == 0) { isStart = false; }
 }
 
 // to get an item description from current room
@@ -186,7 +186,7 @@ void Game::Next_Turn() {
 	cout << "\n\n" << "What would you like to do in this room?" << "\n" << "5:Use Item  6:Use Spells  7:Do Nothing" << endl;
 	cin >> g_input;
 	Player_1->P_Action(g_input);
-	
+
 	// checks to see if the players wants to do anything in the room
 	if (Player_1->p_action != 7) {
 

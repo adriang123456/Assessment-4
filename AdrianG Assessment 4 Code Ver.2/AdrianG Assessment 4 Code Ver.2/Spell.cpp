@@ -7,7 +7,7 @@ using namespace std;
 
 Spell::Spell() {
 }
-Spell::Spell(string name1, int damage1, string name2, int damage2, string name3, int damage3, string name4, int damage4, string name5, int damage5){
+Spell::Spell(string name1, int damage1, string name2, int damage2, string name3, int damage3, string name4, int damage4, string name5, int damage5) {
 	spell_n_1 = name1;
 	spell_n_2 = name2;
 	spell_n_3 = name3;
@@ -34,4 +34,3 @@ bool Spell::Compare(string spell_a, string spell_b)
 	else { return false; }
 	return false;
 }
-

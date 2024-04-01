@@ -25,7 +25,7 @@ public:
 public:
 	int p_x;
 	int p_y;
-	
+
 	int p_action = 1;
 
 	int np_x;
@@ -42,5 +42,4 @@ public:
 	bool has_item;
 
 };
-
 

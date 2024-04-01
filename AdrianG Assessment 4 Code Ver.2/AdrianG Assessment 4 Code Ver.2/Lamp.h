@@ -1,28 +1,29 @@
 #pragma once
+#include "Item.h"
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-class Item
+class Lamp : public Item
 {
-
-	// constructors and destructors
+	// constructor and destructor
 public:
-	Item();
-	~Item();
+	Lamp();
+	Lamp(string l_name, int l_id);
+	~Lamp();
 
 	// functions
 public:
-
 	virtual void Description(string desc);
 	virtual void Use(bool status, int count);
 
-	//variables
+	// variables
 public:
-	string d_script;
-	string state;
+	string lamp_name;
 
+	int lamp_ID;
+
+	bool on_o_off;
 };
-
-

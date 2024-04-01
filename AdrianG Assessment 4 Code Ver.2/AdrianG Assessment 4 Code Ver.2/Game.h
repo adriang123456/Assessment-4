@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
-#include "String_Utility.h"
+
+#include "String.h"
 #include "Room.h"
 #include "Player.h"
 
@@ -26,7 +27,7 @@ public:
 	void Run();
 
 	void Makemap_W_Item();
-	
+
 	void Move();
 	void Item_info();
 	void Next_Turn();
@@ -70,6 +71,5 @@ private:
 	string gs_input_1;
 
 	string gameName;
-	
-};
 
+};

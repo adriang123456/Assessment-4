@@ -1,4 +1,3 @@
-#include "String_Utility.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -298,7 +297,7 @@ bool String::operator ==(const char* other)
 				//cout << "True";
 				return true;
 			}
-		
+
 		}
 	}
 	//cout << "False";
@@ -365,4 +364,4 @@ bool String::operator<(const char* str) const
 	cout << "\n\n\n\n";
 	return false;
 }
-
+#include "String.h"

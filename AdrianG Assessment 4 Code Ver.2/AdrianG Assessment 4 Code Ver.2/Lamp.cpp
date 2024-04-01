@@ -24,5 +24,3 @@ void Lamp::Use(bool status, int count) {
 	}
 	else if (status == 1) { cout << "Lamp has been turned off"; }
 }
-
-
