@@ -26,6 +26,9 @@ int main()
 		}
 	}
 
+	// calling function to delete other classes class pointers and assigning them to null
+	New_Game->Game_End();
+
 	// deleting game class
 	delete New_Game;
 	New_Game = nullptr;

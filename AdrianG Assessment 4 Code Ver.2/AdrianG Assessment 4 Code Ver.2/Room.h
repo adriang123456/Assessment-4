@@ -19,11 +19,11 @@ public:
 	//Lamp* lamp;
 	// functions
 public:
-	//void Makemap();
 
 	void Room_Description(string desc, string i_i);
 	void Item_Description(string i_i);
 	void Item_Use(string i_i);
+	void Item_End();
 
 	// variables
 public:

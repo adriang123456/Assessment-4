@@ -20,6 +20,7 @@ public:
 	void Find_Spell(int l, int r, int x);
 	void Compare_Spells(string spell_1, string spell_2);
 	void Cast_Spell(string s_n, int s_d);
+	void Player_End();
 
 	// variables
 public:
@@ -33,10 +34,11 @@ public:
 
 	int m;
 
-	string player_name;
+	int spells_dmg[5];
 
-	vector<string> spells;
-	vector<int> spells_dmg;
+
+	string player_name;
+	string spells[5];
 
 	bool is_item;
 	bool has_item;

@@ -15,11 +15,11 @@ public:
 	Game(string name);
 	~Game();
 
-	String* Game_String;
-	String* Game_String_1;
+	//String* Game_String;
+	//String* Game_String_1;
 
-	Room* Room_Info;
-	Player* Player_1;
+	//Room* Room_Info;
+	//Player* Player_1;
 
 	// functions
 public:
@@ -31,6 +31,8 @@ public:
 	void Move();
 	void Item_info();
 	void Next_Turn();
+
+	void Game_End();
 
 	// variables
 public:

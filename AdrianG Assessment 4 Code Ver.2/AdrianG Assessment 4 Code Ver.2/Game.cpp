@@ -7,35 +7,37 @@
 
 using namespace std;
 
-Game::Game() {
-	String* Game_String = new String("start");
-	String* Game_String_1 = new String();
-
-	Room* Room_Info = new Room();
-	Player* Player_1 = new Player(9, 0, "John");
-}
-Game::Game(string name) {
-	gameName = name;
-}
-Game::~Game() {
-	delete Game_String;
-	Game_String = nullptr;
-
-	delete Game_String_1;
-	Game_String_1 = nullptr;
-
-	delete Room_Info;
-	Room_Info = nullptr;
-
-	delete Player_1;
-	Player_1 = nullptr;
-}
-
+// Making classes needed in this class
 String* Game_String = new String("start");
 String* Game_String_1 = new String();
 
 Room* Room_Info = new Room();
 Player* Player_1 = new Player(9, 0, "John");
+
+Game::Game() {
+	//String* Game_String = new String("start");
+	//String* Game_String_1 = new String();
+
+	//Room* Room_Info = new Room();
+	//Player* Player_1 = new Player(9, 0, "John");
+}
+Game::Game(string name) {
+	gameName = name;
+}
+Game::~Game() {
+	//delete Game_String;
+	//Game_String = nullptr;
+
+	//delete Game_String_1;
+	//Game_String_1 = nullptr;
+
+	//delete Room_Info;
+	//Room_Info = nullptr;
+
+	//delete Player_1;
+	//Player_1 = nullptr;
+}
+
 
 // function that asks the player if they'd like to start the game or quit
 void Game::GameStart() {
@@ -199,7 +201,7 @@ void Game::Next_Turn() {
 		// checks to see if the player wants to use a spell
 		else if (Player_1->p_action == 6) {
 			cout << "\n\n" << "What would you like to do" << endl;
-			cout << "'Cast' - 'Compare' - 'Spell X' - 'Add'" << endl;
+			cout << "'Cast' - 'Compare' - 'Spell_X' " << endl;
 
 			Game_String_1->Read();
 
@@ -209,9 +211,10 @@ void Game::Next_Turn() {
 				for (int i = 0; i < 5; i++) {
 					cout << Player_1->spells[i] << endl;
 				}
+
 				cout << "\n\n";
 				Game_String_1->Read();
-				if (Game_String_1->operator== ("Fireball") == true); {
+				if (Game_String_1->operator== ("Fireball") == true) {
 					Player_1->Cast_Spell(Player_1->spells[0], Player_1->spells_dmg[0]);
 					for (int i = 0; i < 10; i++) {
 						for (int o = 0; o < 10; o++) {
@@ -220,7 +223,7 @@ void Game::Next_Turn() {
 						cout << "\n";
 					}
 				}
-				if (Game_String_1->operator== ("Frostbite") == true); {
+				if (Game_String_1->operator== ("Frostbite") == true) {
 					Player_1->Cast_Spell(Player_1->spells[1], Player_1->spells_dmg[1]);
 
 					for (int i = 0; i < 10; i++) {
@@ -230,7 +233,7 @@ void Game::Next_Turn() {
 						cout << "\n";
 					}
 				}
-				if (Game_String_1->operator== ("Healing") == true); {
+				if (Game_String_1->operator== ("Healing") == true) {
 					Player_1->Cast_Spell(Player_1->spells[2], Player_1->spells_dmg[2]);
 
 					for (int i = 0; i < 10; i++) {
@@ -240,7 +243,7 @@ void Game::Next_Turn() {
 						cout << "\n";
 					}
 				}
-				if (Game_String_1->operator== ("Teleport") == true); {
+				if (Game_String_1->operator== ("Teleport") == true) {
 					Player_1->Cast_Spell(Player_1->spells[3], Player_1->spells_dmg[3]);
 
 					for (int i = 0; i < 10; i++) {
@@ -250,9 +253,8 @@ void Game::Next_Turn() {
 						cout << "\n";
 					}
 				}
-				if (Game_String_1->operator== ("MagicMissile") == true); {
+				if (Game_String_1->operator== ("MagicMissile") == true) {
 					Player_1->Cast_Spell(Player_1->spells[4], Player_1->spells_dmg[4]);
-
 					for (int i = 0; i < 10; i++) {
 						for (int o = 0; o < 10; o++) {
 							cout << rooms[i][o] << " ";
@@ -272,11 +274,13 @@ void Game::Next_Turn() {
 			}
 
 			// code to find if the player knows a spell
-			else if (Game_String_1->operator==("Spell X") == true) {
+			else if (Game_String_1->operator==("Spell_X") == true) {
 				cout << "What spell would you like to find?" << endl << "\n\n";
 				for (int i = 0; i < 5; i++) {
 					cout << i << ": " << Player_1->spells[i] << endl;
 				}
+				cout << "5: Lightning" << endl;
+				cout << "6: FireStorm" << endl;
 				cin >> g_input;
 				Player_1->Find_Spell(0, 5, g_input);
 			}
@@ -285,4 +289,24 @@ void Game::Next_Turn() {
 			else { cout << "Invalid Input" << endl << "\n\n"; }
 		}
 	}
+}
+
+// a function to assign pointers to null and delete the classes
+void Game::Game_End()
+{
+	delete Game_String;
+	Game_String = nullptr;
+
+	delete Game_String_1;
+	Game_String_1 = nullptr;
+
+	delete Room_Info;
+	Room_Info = nullptr;
+
+	delete Player_1;
+	Player_1 = nullptr;
+
+	Player_1->Player_End();
+
+	Room_Info->Item_End();
 }

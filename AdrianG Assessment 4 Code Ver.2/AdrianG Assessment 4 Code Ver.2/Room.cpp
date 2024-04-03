@@ -9,6 +9,12 @@
 
 using namespace std;
 
+// making classes needed in this code
+Item* It_ems = new Item();
+Cat* cat = new Cat();
+Box_of_Donuts* box = new Box_of_Donuts();
+Lamp* lamp = new Lamp();
+
 // constructor and destructor
 Room::Room() {
 	//Item* It_ems = new Item();
@@ -29,23 +35,6 @@ Room::~Room() {
 	//delete lamp;
 	//lamp = nullptr;
 }
-
-Item* It_ems = new Item();
-Cat* cat = new Cat();
-Box_of_Donuts* box = new Box_of_Donuts();
-Lamp* lamp = new Lamp();
-
-//void Room::Makemap()
-//{
-//	cout << "    --- Map --- \n" ;
-//	for (int i = 0; i < 10; i++) {
-//		for (int o = 0; o < 10; o++) {
-//			cout << rooms[i][o] << " ";
-//		}
-//		cout << "\n";
-//	}
-//	
-//}
 
 // making a room description
 void Room::Room_Description(string desc, string i_i) {
@@ -99,6 +88,7 @@ void Room::Item_Description(string i_i) {
 	}
 }
 
+// function to use and item
 void Room::Item_Use(string i_i) {
 	if (i_i == "L") {
 		lamp->Use(l_state, 0);
@@ -109,4 +99,19 @@ void Room::Item_Use(string i_i) {
 	if (i_i == "C") {
 		cat->Use(c_state, 0);
 	}
+}
+
+// function to delete and assign class pointers to null
+void Room::Item_End(){
+	delete It_ems;
+	It_ems = nullptr;
+	
+	delete cat;
+	cat = nullptr;
+	
+	delete box;
+	box = nullptr;
+	
+	delete lamp;
+	lamp = nullptr;
 }
